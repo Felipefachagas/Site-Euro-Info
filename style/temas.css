@@ -1,0 +1,109 @@
+/*Css para os 3 temas (Champions League, Europa League e Conference League)*/
+
+/*usar as variaveis para alterar a cor em determinado tema*/
+
+/*Champions League*/
+:root,
+body.tema-champions {
+  --cor-foco: #c700ff;
+  --cor-meio1: #6c3cff;
+  --cor-meio2: #0047ff;
+  --cor-canto1: #0a2d6b;
+  --cor-canto2: #041e42;
+
+  --cor-btn-inicio: #0047ff;
+  --cor-btn-fim: #6c3cff;
+  --cor-texto-btn: #ffffff;
+  --cor-destaque: #00d4ff;
+}
+
+/*Europa League */
+body.tema-europa {
+  --cor-foco: #ffd54f;
+  --cor-meio1: #ff8300;
+  --cor-meio2: #ff6a00;
+  --cor-canto1: #2d2a2a;
+  --cor-canto2: #1f1e1e;
+
+  --cor-btn-inicio: #ff6a00;
+  --cor-btn-fim: #ff8300;
+  --cor-texto-btn: #000000;
+  --cor-destaque: #ffd54f;
+}
+
+/*Conference League */
+body.tema-conference {
+  --cor-foco: #74ff80;
+  --cor-meio1: #00d553;
+  --cor-meio2: #008c33;
+  --cor-canto1: #2d2a2a;
+  --cor-canto2: #1f1e1e;
+
+  --cor-btn-inicio: #008c33;
+  --cor-btn-fim: #00d553;
+  --cor-texto-btn: #000000;
+  --cor-destaque: #74ff80;
+}
+
+.area-conteudo {
+  min-height: 100vh;
+  padding: 120px 20px 40px 20px;
+
+  /* MÁGICA AQUI: Lemos as variáveis e o CSS se vira! */
+  background-image: radial-gradient(
+    circle at 85% 35%,
+    var(--cor-foco) 0%,
+    var(--cor-meio1) 15%,
+    var(--cor-meio2) 35%,
+    var(--cor-canto1) 75%,
+    var(--cor-canto2) 100%
+  );
+  transition: background-image 0.5s ease;
+}
+
+.container {
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.card-glass {
+  background: rgba(26, 26, 26, 0.45);
+  backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  border-radius: 16px;
+  padding: 24px;
+  margin-bottom: 25px;
+}
+
+.linha-jogo {
+  display: flex;
+  justify-content: space-between;
+  padding: 12px 0;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.placar {
+  background-color: rgba(0, 0, 0, 0.6);
+  padding: 4px 12px;
+  border-radius: 6px;
+}
+
+.texto-destaque {
+  color: var(--cor-destaque);
+  font-size: 0.9rem;
+  margin-bottom: 15px;
+}
+
+.botao-acao {
+  display: inline-block;
+  margin-top: 15px;
+  padding: 10px 20px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: bold;
+  border: none;
+
+  /* Lemos as variáveis do botão */
+  background: linear-gradient(90deg, var(--cor-btn-inicio), var(--cor-btn-fim));
+  color: var(--cor-texto-btn);
+}

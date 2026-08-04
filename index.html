@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" type="image/png" href="images/soccerBall.png" />
+    <link rel="stylesheet" href="style/geral.css" />
+    <link rel="stylesheet" href="style/temas.css" />
+    <title>Euro Info</title>
+  </head>
+  <body>
+    <!-- NavBar que estará sempre no site-->
+    <nav>
+      <div class="navesquerda"><img src="" alt="" /></div>
+      <div class="navcentro">
+        <button class="nav-btn" data-tela="champions">Champions League</button>
+        <button class="nav-btn" data-tela="europa">Europa League</button>
+        <button class="nav-btn" data-tela="conference">
+          Conference League
+        </button>
+      </div>
+      <div class="navdireita">
+        <button class="nav-btn" data-tela="champions">
+          <img
+            src="images/UEFA_Champions_League_logo.png"
+            alt="Logo da Champions League"
+          />
+        </button>
+        <button class="nav-btn" data-tela="europa">
+          <img
+            src="images/UEFA_Europa_League_logo_(2024_version).svg.webp"
+            alt="Logo da Europa League"
+          />
+        </button>
+        <button class="nav-btn" data-tela="conference">
+          <img
+            src="images/UEFA_Conference_League_full_logo_(2024_version).svg.webp"
+            alt="Logo da Conference League"
+          />
+        </button>
+      </div>
+    </nav>
+
+    <!-- Conteudo da página que será inserido via DOM-->
+    <div id="container"></div>
+
+    <script src="scripts/dados.js"></script>
+    <script src="scripts/dom.js"></script>
+  </body>
+</html>
