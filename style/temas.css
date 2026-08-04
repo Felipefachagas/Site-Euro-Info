@@ -15,6 +15,7 @@ body.tema-champions {
   --cor-btn-fim: #6c3cff;
   --cor-texto-btn: #ffffff;
   --cor-destaque: #00d4ff;
+  --cor-resumo: #003bd0;
 }
 
 /*Europa League */
@@ -29,6 +30,7 @@ body.tema-europa {
   --cor-btn-fim: #ff8300;
   --cor-texto-btn: #000000;
   --cor-destaque: #ffd54f;
+  --cor-resumo: #000000;
 }
 
 /*Conference League */
@@ -43,6 +45,7 @@ body.tema-conference {
   --cor-btn-fim: #00d553;
   --cor-texto-btn: #000000;
   --cor-destaque: #74ff80;
+  --cor-resumo: #000000;
 }
 
 .area-conteudo {
@@ -62,6 +65,7 @@ body.tema-conference {
 }
 
 .container {
+  justify-content: center;
   max-width: 900px;
   margin: 0 auto;
 }
@@ -106,4 +110,12 @@ body.tema-conference {
   /* Lemos as variáveis do botão */
   background: linear-gradient(90deg, var(--cor-btn-inicio), var(--cor-btn-fim));
   color: var(--cor-texto-btn);
+}
+
+#secao-base {
+  width: 100%;
+  height: 40vh;
+  padding: 40px 20px;
+  color: white;
+  background-color: var(--cor-resumo);
 }

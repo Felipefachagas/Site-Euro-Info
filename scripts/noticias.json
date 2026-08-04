@@ -1,0 +1,38 @@
+[
+  {
+    "id": 1,
+    "imagem": "images/noticia1.jpg",
+    "titulo": "PSG leva o bicampeonato da champions",
+    "resumo": "A equipe merengue mostrou superioridade e garantiu a vitória em casa."
+  },
+  {
+    "id": 2,
+    "imagem": "images/noticia1.jpg",
+    "titulo": "Sorteio das oitavas de final",
+    "resumo": "Veja quais serão os confrontos da próxima fase da competição."
+  },
+  {
+    "id": 3,
+    "imagem": "images/noticia1.jpg",
+    "titulo": "Artilheiro quebra recorde1",
+    "resumo": "Mais um marco histórico na Champions League desta temporada."
+  },
+  {
+    "id": 4,
+    "imagem": "images/noticia1.jpg",
+    "titulo": "Artilheiro quebra recorde2",
+    "resumo": "Mais um marco histórico na Champions League desta temporada."
+  },
+  {
+    "id": 5,
+    "imagem": "images/noticia1.jpg",
+    "titulo": "Artilheiro quebra recorde3",
+    "resumo": "Mais um marco histórico na Champions League desta temporada."
+  },
+  {
+    "id": 6,
+    "imagem": "images/noticia1.jpg",
+    "titulo": "Artilheiro quebra recorde4",
+    "resumo": "Mais um marco histórico na Champions League desta temporada."
+  }
+]

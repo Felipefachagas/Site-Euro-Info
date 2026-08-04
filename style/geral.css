@@ -53,3 +53,34 @@ nav button {
   cursor: pointer;
   font-weight: 600;
 }
+
+/*Parte das noticias*/
+#secao-noticias {
+  width: 100%;
+  height: 50vh;
+}
+
+.noticias-ordenar {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 30px;
+}
+
+.verMais {
+  height: 100px;
+  width: 100px;
+  background-color: #000000;
+}
+
+.voltar {
+  height: 100px;
+  width: 100px;
+  background-color: #000000;
+}
+
+footer {
+  background-color: #03011f;
+  width: 100%;
+  height: 20vh;
+}

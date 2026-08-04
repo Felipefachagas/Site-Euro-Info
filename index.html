@@ -42,8 +42,59 @@
     </nav>
 
     <!-- Conteudo da página que será inserido via DOM-->
-    <div id="container"></div>
+    <main id="app">
+      <section id="secao-topo" class="area-conteudo">
+        <div class="container" id="destaque">
+          <!--A tabela e jogos dados da API serão inseridos aqui-->
+        </div>
+      </section>
 
+      <!--Aba de notícias-->
+      <section
+        id="secao-noticias"
+        style="background-color: #edecec; color: #000; padding: 40px 20px"
+      >
+        <div class="container">
+          <h2>Últimas Notícias</h2>
+          <div class="noticias-ordenar">
+            <button
+              class="voltar"
+              id="voltar"
+              style="display: none; color: black"
+            >
+              AAAAAAA
+            </button>
+            <div
+              id="noticias"
+              style="display: flex; gap: 20px; margin-top: 20px"
+            >
+              <!-- O JS vai injetar os cards de notícias aqui depois -->
+            </div>
+            <button class="verMais" id="ver-mais" style="color: black"></button>
+             <button
+              class="voltar"
+              id="voltar"
+              style="display: none; color: black"
+            >
+              AAAAAAA
+            </button>
+          </div>
+        </div>
+      </section>
+
+      <!-- Highlights -->
+      <section id="secao-base">
+        <div class="container">
+          <h2>Resumos</h2>
+          <div id="resumos" style="display: flex; gap: 20px; margin-top: 20px">
+            <!-- O JS vai injetar os vídeos/jogadores aqui depois -->
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <!--FOOTER PADRÃO SÓ COM HTML E CSS PURO-->
+    <footer></footer>
     <script src="scripts/dados.js"></script>
     <script src="scripts/dom.js"></script>
   </body>
