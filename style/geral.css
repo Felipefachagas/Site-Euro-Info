@@ -16,6 +16,7 @@ img {
   height: auto;
   display: block;
 }
+
 nav {
   display: flex;
   justify-content: space-around;
@@ -38,12 +39,14 @@ nav {
   display: flex;
   gap: 50px;
 }
+
 .navdireita img {
   height: 60px;
   width: auto;
   cursor: pointer;
   transition: transform 0.2s ease;
 }
+
 nav button {
   background: transparent;
   color: #fff;
@@ -57,7 +60,8 @@ nav button {
 /*Parte das noticias*/
 #secao-noticias {
   width: 100%;
-  height: 50vh;
+  min-height: 55vh;
+  height: auto;
 }
 
 .noticias-ordenar {
@@ -68,19 +72,134 @@ nav button {
 }
 
 .verMais {
-  height: 100px;
-  width: 100px;
-  background-color: #000000;
+  height: 50px;
+  width: 50px;
+  border-radius: 50%;
+  background-color: rgb(219, 219, 219);
+  border: none;
+  color: black;
+  font-size: 18px;
+  flex-shrink: 0
 }
 
 .voltar {
-  height: 100px;
-  width: 100px;
-  background-color: #000000;
+  height: 50px;
+  width: 50px;
+  border-radius: 50%;
+  background-color: rgb(219, 219, 219);
+  border: none;
+  color: black;
+  font-size: 18px;
+  flex-shrink: 0
+}
+
+@keyframes avancar {
+  from {
+    opacity: 0;
+    transform: translateX(50px);
+    /* Começa 50px para a direita */
+  }
+
+  to {
+    opacity: 1;
+    transform: translateX(0);
+    /* Termina no lugar original */
+  }
+}
+
+@keyframes voltar {
+  from {
+    opacity: 0;
+    transform: translateX(-50px);
+    /* Começa 50px para a esquerda */
+  }
+
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes entradaInicial {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+    /* Surge de baixo para cima levemente */
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Classe que o JS vai usar no primeiro carregamento */
+.anima-entrada {
+  animation: entradaInicial 0.6s ease forwards;
+}
+
+/* Classes que o JS vai usar para ativar a animação nos cards */
+.anima-proximo {
+  animation: avancar 0.6s ease forwards;
+}
+
+.anima-anterior {
+  animation: voltar 0.6s ease forwards;
 }
 
 footer {
   background-color: #03011f;
   width: 100%;
   height: 20vh;
+}
+
+
+
+
+/*TRABALHANDO A RESPONSIVIDADE EM TUDO*/
+
+/*para celulares*/
+@media (max-width: 768px) {
+  nav {
+    flex-direction: column;
+    height: auto;
+    position: relative;
+    /* Tira o fixed no celular para não bugar o topo */
+    padding-bottom: 20px;
+  }
+
+  .area-conteudo {
+    padding-top: 40px;
+    /* Diminui o padding já que a nav não é mais fixed */
+  }
+
+  /* Organiza os botões e as notícias em coluna */
+  .noticias-ordenar {
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  /* Força os cards a ficarem um embaixo do outro e centralizados */
+  #noticias {
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center;
+    width: 100%;
+  }
+
+  /* Ajusta o tamanho do card para caber na tela do celular */
+  .card-noticia {
+    width: 90% !important;
+    /* Pega quase a tela toda */
+    max-width: 350px;
+    margin-bottom: 15px;
+    /* Dá um respiro entre um card e outro */
+  }
+
+  /* Diminui os botões de avançar/voltar para não tomarem meia tela */
+  .verMais,
+  .voltar {
+    height: 60px;
+    width: 60px;
+  }
 }

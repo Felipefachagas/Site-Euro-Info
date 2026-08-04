@@ -53,14 +53,12 @@ body.tema-conference {
   padding: 120px 20px 40px 20px;
 
   /* MÁGICA AQUI: Lemos as variáveis e o CSS se vira! */
-  background-image: radial-gradient(
-    circle at 85% 35%,
-    var(--cor-foco) 0%,
-    var(--cor-meio1) 15%,
-    var(--cor-meio2) 35%,
-    var(--cor-canto1) 75%,
-    var(--cor-canto2) 100%
-  );
+  background-image: radial-gradient(circle at 85% 35%,
+      var(--cor-foco) 0%,
+      var(--cor-meio1) 15%,
+      var(--cor-meio2) 35%,
+      var(--cor-canto1) 75%,
+      var(--cor-canto2) 100%);
   transition: background-image 0.5s ease;
 }
 
@@ -114,8 +112,42 @@ body.tema-conference {
 
 #secao-base {
   width: 100%;
-  height: 40vh;
+  min-height: 40vh;
+  height: auto;
   padding: 40px 20px;
   color: white;
   background-color: var(--cor-resumo);
+}
+
+.card-noticia {
+  width: 220px;
+  border-radius: 5%;
+  padding-bottom: 15px;
+  overflow: hidden;
+  background-color: #ffffff;
+  border-radius: 8px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.card-noticia img {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+  margin: 0;
+  display: block;
+}
+
+.card-noticia h3 {
+  padding: 15px 15px 5px 15px;
+  margin: 0;
+  font-size: 1.1rem;
+}
+
+.card-noticia p {
+  padding: 0 15px 15px 15px;
+  margin: 0;
+  font-size: 0.9rem;
+  color: #333;
 }

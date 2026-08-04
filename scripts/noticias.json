@@ -1,38 +1,110 @@
 [
   {
-    "id": 1,
+    "liga": "champions",
     "imagem": "images/noticia1.jpg",
     "titulo": "PSG leva o bicampeonato da champions",
     "resumo": "A equipe merengue mostrou superioridade e garantiu a vitória em casa."
   },
   {
-    "id": 2,
+    "liga": "champions",
     "imagem": "images/noticia1.jpg",
     "titulo": "Sorteio das oitavas de final",
     "resumo": "Veja quais serão os confrontos da próxima fase da competição."
   },
   {
-    "id": 3,
+    "liga": "champions",
     "imagem": "images/noticia1.jpg",
     "titulo": "Artilheiro quebra recorde1",
     "resumo": "Mais um marco histórico na Champions League desta temporada."
   },
   {
-    "id": 4,
+    "liga": "champions",
     "imagem": "images/noticia1.jpg",
     "titulo": "Artilheiro quebra recorde2",
     "resumo": "Mais um marco histórico na Champions League desta temporada."
   },
   {
-    "id": 5,
+    "liga": "champions",
     "imagem": "images/noticia1.jpg",
     "titulo": "Artilheiro quebra recorde3",
     "resumo": "Mais um marco histórico na Champions League desta temporada."
   },
   {
-    "id": 6,
+    "liga": "champions",
     "imagem": "images/noticia1.jpg",
     "titulo": "Artilheiro quebra recorde4",
     "resumo": "Mais um marco histórico na Champions League desta temporada."
+  },
+  {
+    "liga": "europa",
+    "titulo": "Atalanta domina e vence fora",
+    "resumo": "Equipe italiana não toma conhecimento do adversário e constrói boa vantagem.",
+    "imagem": "images/atalanta.jpg"
+  },
+  {
+    "liga": "europa",
+    "titulo": "Bayer Leverkusen segue invicto",
+    "resumo": "A máquina alemã atropela mais um e se consolida como favorita ao título.",
+    "imagem": "images/leverkusen.jpg"
+  },
+  {
+    "liga": "europa",
+    "titulo": "Roma busca empate heróico",
+    "resumo": "Com um a menos, time da capital italiana arranca um ponto valioso no fim do jogo.",
+    "imagem": "images/roma.jpg"
+  },
+  {
+    "liga": "europa",
+    "titulo": "Liverpool poupa titulares",
+    "resumo": "Klopp roda o elenco na Europa League e garotos da base dão conta do recado.",
+    "imagem": "images/liverpool.jpg"
+  },
+  {
+    "liga": "europa",
+    "titulo": "Clássico tenso nas quartas",
+    "resumo": "Jogo pegado e com duas expulsões marca a rodada da Liga Europa.",
+    "imagem": "images/classico_europa.jpg"
+  },
+  {
+    "liga": "europa",
+    "titulo": "Festa da torcida visitante",
+    "resumo": "Mais de 10 mil torcedores viajam e empurram o time rumo à semifinal.",
+    "imagem": "images/torcida_europa.jpg"
+  },
+  {
+    "liga": "conference",
+    "titulo": "Fiorentina garante vaga suada",
+    "resumo": "A viola sofre, mas consegue a classificação para a próxima fase nos pênaltis.",
+    "imagem": "images/fiorentina.jpg"
+  },
+  {
+    "liga": "conference",
+    "titulo": "West Ham goleia em casa",
+    "resumo": "Time inglês faz a alegria da torcida em Londres com um sonoro 4 a 0.",
+    "imagem": "images/westham.jpg"
+  },
+  {
+    "liga": "conference",
+    "titulo": "Aston Villa mostra força",
+    "resumo": "Com show no meio campo, Villa se coloca como forte candidato à taça.",
+    "imagem": "images/astonvilla.jpg"
+  },
+  {
+    "liga": "conference",
+    "titulo": "Zebra grega na Conference",
+    "resumo": "Olympiacos surpreende favoritos e chega com moral na fase final do torneio.",
+    "imagem": "images/olympiacos.jpg"
+  },
+  {
+    "liga": "conference",
+    "titulo": "Golaço do meio de campo!",
+    "resumo": "Jogador arrisca de longe e concorre ao Prêmio Puskás da temporada.",
+    "imagem": "images/golaco_conference.jpg"
+  },
+  {
+    "liga": "conference",
+    "titulo": "Final definida em Atenas",
+    "resumo": "Estádio lotado aguarda o confronto que decidirá o grande campeão europeu.",
+    "imagem": "images/final_conference.jpg"
   }
 ]
