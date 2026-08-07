@@ -122,6 +122,53 @@ body.tema-conference {
   background-color: var(--cor-resumo);
 }
 
+/*NavBar secundária*/
+
+.navSecundaria {
+  display: flex;
+  margin-top: 40px;
+  margin-bottom: 40px;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  gap: 100px;
+
+}
+
+.navSecundaria button {
+  color: white;
+  background: none;
+  border: none;
+  font-weight: bold;
+  font-size: 22px;
+  position: relative;
+  cursor: pointer;
+  transition: color 0.3s ease, transform 0.5s ease;
+}
+
+.navSecundaria button::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -4px;
+
+  width: 100%;
+  height: 4px;
+  background: black;
+
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.5s ease;
+}
+
+.navSecundaria button:hover::after {
+  transform: scaleX(1);
+}
+
+.navSecundaria button:hover {
+  transform: scale(1.1);
+}
+
 .card-noticia {
   width: 220px;
   border-radius: 5%;

@@ -3,6 +3,7 @@ const botoesNav = document.querySelectorAll(".nav-btn"); // Botões da NavBar
 const app = document.querySelector("#container");
 const body = document.body;
 const destaque = document.querySelector("#destaque");  // As seções, importante pegar a "caixa" para inserir os dados via DOM
+const navSecundaria = document.querySelector("#navSecundaria");
 const noticias = document.querySelector("#noticias");
 const resumos = document.querySelector("#resumos");
 const botaoVerMais1 = document.querySelector("#ver-mais1");  // Para a parte das noticias
@@ -40,6 +41,7 @@ function carregarTela(tela) {
     // ESCONDE AS SEÇÕES DE NOTÍCIAS E RESUMOS NO INÍCIO
     secaoNoticias.style.display = "none";
     secaoBase.style.display = "none";
+    navSecundaria.style.display = "none";
 
     destaque.innerHTML = `
       <div style="text-align: center;">
@@ -52,6 +54,7 @@ function carregarTela(tela) {
     // MOSTRA AS SEÇÕES ASSIM QUE QUALQUER LIGA FOR CLICADA
     secaoNoticias.style.display = "block";
     secaoBase.style.display = "block";
+    navSecundaria.style.display = "flex";
 
     if (tela === "champions") {
       body.classList.add("tema-champions");

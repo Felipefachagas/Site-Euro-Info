@@ -13,7 +13,9 @@
 <body>
   <!-- NavBar que estará sempre no site-->
   <nav>
-    <div class="navesquerda"><img src="" alt="" /></div>
+    <div class="navesquerda">
+      <button class="nav-btn" data-tela="inicio"><img src="images/fifa.png" alt="" />
+    </div></button>
     <div class="navcentro">
       <button class="nav-btn" data-tela="champions">Champions League</button>
       <button class="nav-btn" data-tela="europa">Europa League</button>
@@ -38,6 +40,13 @@
   <!-- Conteudo da página que será inserido via DOM-->
   <main id="app">
     <section id="secao-topo" class="area-conteudo">
+      <!--INSERINDO A NAV BAR SECUNDARIA PARA CADA TEMA-->
+      <div class="navSecundaria" id="navSecundaria">
+        <button class="nav-btn" data-tela="visaoGeral">Visão Geral</button>
+        <button class="nav-btn" data-tela="jogos">Jogos</button>
+        <button class="nav-btn" data-tela="tabela">Tabela</button>
+        <button class="nav-btn" data-tela="historia">História da Competição</button>
+      </div>
       <div class="container" id="destaque">
         <!--A tabela e jogos dados da API serão inseridos aqui-->
       </div>

@@ -161,82 +161,82 @@
     },
     {
         "liga": "conference",
-        "imagem": "images/europaLeague/Larsson.png",
+        "imagem": "images/conferenceLeague/arthur.png",
         "nome": "Arthur Cabral",
-        "jogos": "200",
+        "jogos": "27",
         "gols": "21",
-        "assistencias": "10"
+        "assistencias": "5"
     },
     {
         "liga": "conference",
-        "imagem": "images/europaLeague/Larsson.png",
+        "imagem": "images/conferenceLeague/zahavi.png",
         "nome": "Zahavi",
-        "jogos": "200",
-        "gols": "40",
-        "assistencias": "10"
+        "jogos": "14",
+        "gols": "19",
+        "assistencias": "1"
     },
     {
         "liga": "conference",
-        "imagem": "images/europaLeague/Larsson.png",
+        "imagem": "images/conferenceLeague/cuypers.png",
         "nome": "Cuypers",
-        "jogos": "200",
-        "gols": "40",
-        "assistencias": "10"
+        "jogos": "22",
+        "gols": "16",
+        "assistencias": "2"
     },
     {
         "liga": "conference",
-        "imagem": "images/europaLeague/Larsson.png",
+        "imagem": "images/conferenceLeague/pavlidis.png",
         "nome": "Pavlidis",
-        "jogos": "200",
-        "gols": "40",
-        "assistencias": "10"
+        "jogos": " 21",
+        "gols": "16",
+        "assistencias": "2"
     },
     {
         "liga": "conference",
-        "imagem": "images/europaLeague/Larsson.png",
+        "imagem": "images/conferenceLeague/ishak.png",
         "nome": "Ishak",
-        "jogos": "200",
-        "gols": "40",
-        "assistencias": "10"
+        "jogos": "24",
+        "gols": "16",
+        "assistencias": "1"
     },
     {
         "liga": "conference",
-        "imagem": "images/europaLeague/Larsson.png",
+        "imagem": "images/conferenceLeague/orban.png",
         "nome": "Orban",
-        "jogos": "200",
-        "gols": "40",
-        "assistencias": "10"
+        "jogos": "16",
+        "gols": "14",
+        "assistencias": "1"
     },
     {
         "liga": "conference",
-        "imagem": "images/europaLeague/Larsson.png",
+        "imagem": "images/conferenceLeague/ricardo.png",
         "nome": "Ricardo Gomes",
-        "jogos": "200",
-        "gols": "40",
-        "assistencias": "10"
+        "jogos": "23",
+        "gols": "14",
+        "assistencias": "2"
     },
     {
         "liga": "conference",
-        "imagem": "images/europaLeague/Larsson.png",
+        "imagem": "images/conferenceLeague/pellegrino.png",
         "nome": "Pellegrino",
-        "jogos": "200",
-        "gols": "40",
-        "assistencias": "10"
+        "jogos": "27",
+        "gols": "13",
+        "assistencias": "3"
     },
     {
         "liga": "conference",
-        "imagem": "images/europaLeague/Larsson.png",
+        "imagem": "images/conferenceLeague/Rrahmani.png",
         "nome": "Rrahmani",
-        "jogos": "200",
-        "gols": "40",
-        "assistencias": "10"
+        "jogos": "27",
+        "gols": "13",
+        "assistencias": "2"
     },
     {
         "liga": "conference",
-        "imagem": "images/europaLeague/Larsson.png",
+        "imagem": "images/conferenceLeague/pululu.png",
         "nome": "Pululu",
-        "jogos": "200",
-        "gols": "40",
-        "assistencias": "10"
+        "jogos": "26",
+        "gols": "13",
+        "assistencias": "5"
     }
 ]

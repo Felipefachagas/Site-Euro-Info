@@ -35,6 +35,13 @@ nav {
   padding: 15px;
 }
 
+
+.navesquerda img {
+  height: 60px; 
+  width: auto;  
+  display: block; 
+}
+
 .navdireita {
   display: flex;
   gap: 50px;
