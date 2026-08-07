@@ -64,34 +64,15 @@ nav button {
   height: auto;
 }
 
-.noticias-ordenar {
+.ordenar {
   display: flex;
   justify-content: center;
   align-items: center;
   gap: 30px;
 }
 
-.verMais {
-  height: 50px;
-  width: 50px;
-  border-radius: 50%;
-  background-color: rgb(219, 219, 219);
-  border: none;
-  color: black;
-  font-size: 18px;
-  flex-shrink: 0
-}
 
-.voltar {
-  height: 50px;
-  width: 50px;
-  border-radius: 50%;
-  background-color: rgb(219, 219, 219);
-  border: none;
-  color: black;
-  font-size: 18px;
-  flex-shrink: 0
-}
+
 
 @keyframes avancar {
   from {
@@ -154,8 +135,6 @@ footer {
 }
 
 
-
-
 /*TRABALHANDO A RESPONSIVIDADE EM TUDO*/
 
 /*para celulares*/
@@ -174,7 +153,7 @@ footer {
   }
 
   /* Organiza os botões e as notícias em coluna */
-  .noticias-ordenar {
+  .ordenar {
     flex-direction: column;
     gap: 20px;
   }

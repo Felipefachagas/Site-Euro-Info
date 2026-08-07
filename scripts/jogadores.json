@@ -1,0 +1,242 @@
+[
+    {
+        "liga": "champions",
+        "imagem": "images/championsLeague/Cr7.png",
+        "nome": "Cristiano Ronaldo",
+        "jogos": "187",
+        "gols": "141",
+        "assistencias": "42"
+    },
+    {
+        "liga": "champions",
+        "imagem": "images/championsLeague/messi.png",
+        "nome": "Lionel Messi",
+        "jogos": "163",
+        "gols": "129",
+        "assistencias": "40"
+    },
+    {
+        "liga": "champions",
+        "imagem": "images/championsLeague/lewa.png",
+        "nome": "Lewandowski",
+        "jogos": "144",
+        "gols": "109",
+        "assistencias": "22"
+    },
+    {
+        "liga": "champions",
+        "imagem": "images/championsLeague/benzema.png",
+        "nome": "Benzema",
+        "jogos": "152",
+        "gols": "90",
+        "assistencias": "29"
+    },
+    {
+        "liga": "champions",
+        "imagem": "images/championsLeague/raul.png",
+        "nome": "Raúl González",
+        "jogos": "144",
+        "gols": "71",
+        "assistencias": "16"
+    },
+    {
+        "liga": "champions",
+        "imagem": "images/championsLeague/mbappe.png",
+        "nome": "Mbappé",
+        "jogos": "98",
+        "gols": "70",
+        "assistencias": "25"
+    },
+    {
+        "liga": "champions",
+        "imagem": "images/championsLeague/VanNistelrooy.png",
+        "nome": "Van Nistelrooy",
+        "jogos": "76",
+        "gols": "60",
+        "assistencias": "16"
+    },
+    {
+        "liga": "champions",
+        "imagem": "images/championsLeague/Schevchenko.png",
+        "nome": "Schevchenko",
+        "jogos": "116",
+        "gols": "59",
+        "assistencias": "15"
+    },
+    {
+        "liga": "champions",
+        "imagem": "images/championsLeague/haaland.png",
+        "nome": "Haaland",
+        "jogos": "58",
+        "gols": "57",
+        "assistencias": "5"
+    },
+    {
+        "liga": "champions",
+        "imagem": "images/championsLeague/muller.png",
+        "nome": "Muller",
+        "jogos": "165",
+        "gols": "57",
+        "assistencias": "30"
+    },
+    {
+        "liga": "europa",
+        "imagem": "images/europaLeague/Larsson.png",
+        "nome": "Larsson",
+        "jogos": "45",
+        "gols": "40",
+        "assistencias": "11"
+    },
+    {
+        "liga": "europa",
+        "imagem": "images/europaLeague/auba.png",
+        "nome": "Aubameyang",
+        "jogos": "62",
+        "gols": "37",
+        "assistencias": "4"
+    },
+    {
+        "liga": "europa",
+        "imagem": "images/europaLeague/huntelaar.png",
+        "nome": "Huntelaar",
+        "jogos": "50",
+        "gols": "34",
+        "assistencias": "4"
+    },
+    {
+        "liga": "europa",
+        "imagem": "images/europaLeague/morelos.png",
+        "nome": "Morelos",
+        "jogos": "62",
+        "gols": "32",
+        "assistencias": "8"
+    },
+    {
+        "liga": "europa",
+        "imagem": "images/europaLeague/aduriz.png",
+        "nome": "Aritz Aduriz",
+        "jogos": "47",
+        "gols": "31",
+        "assistencias": "9"
+    },
+    {
+        "liga": "europa",
+        "imagem": "images/europaLeague/falcao.png",
+        "nome": "Falcao",
+        "jogos": "31",
+        "gols": "31",
+        "assistencias": "4"
+    },
+    {
+        "liga": "europa",
+        "imagem": "images/europaLeague/muller.png",
+        "nome": "Dieter Müller",
+        "jogos": "36",
+        "gols": "29",
+        "assistencias": "1"
+    },
+    {
+        "liga": "europa",
+        "imagem": "images/europaLeague/dzeko.png",
+        "nome": "Dzeko",
+        "jogos": "60",
+        "gols": "28",
+        "assistencias": "7"
+    },
+    {
+        "liga": "europa",
+        "imagem": "images/europaLeague/love.png",
+        "nome": "Vagner Love",
+        "jogos": "36",
+        "gols": "27",
+        "assistencias": "10"
+    },
+    {
+        "liga": "europa",
+        "imagem": "images/europaLeague/bruno.png",
+        "nome": "Bruno Fernandes",
+        "jogos": "58",
+        "gols": "27",
+        "assistencias": "23"
+    },
+    {
+        "liga": "conference",
+        "imagem": "images/europaLeague/Larsson.png",
+        "nome": "Arthur Cabral",
+        "jogos": "200",
+        "gols": "21",
+        "assistencias": "10"
+    },
+    {
+        "liga": "conference",
+        "imagem": "images/europaLeague/Larsson.png",
+        "nome": "Zahavi",
+        "jogos": "200",
+        "gols": "40",
+        "assistencias": "10"
+    },
+    {
+        "liga": "conference",
+        "imagem": "images/europaLeague/Larsson.png",
+        "nome": "Cuypers",
+        "jogos": "200",
+        "gols": "40",
+        "assistencias": "10"
+    },
+    {
+        "liga": "conference",
+        "imagem": "images/europaLeague/Larsson.png",
+        "nome": "Pavlidis",
+        "jogos": "200",
+        "gols": "40",
+        "assistencias": "10"
+    },
+    {
+        "liga": "conference",
+        "imagem": "images/europaLeague/Larsson.png",
+        "nome": "Ishak",
+        "jogos": "200",
+        "gols": "40",
+        "assistencias": "10"
+    },
+    {
+        "liga": "conference",
+        "imagem": "images/europaLeague/Larsson.png",
+        "nome": "Orban",
+        "jogos": "200",
+        "gols": "40",
+        "assistencias": "10"
+    },
+    {
+        "liga": "conference",
+        "imagem": "images/europaLeague/Larsson.png",
+        "nome": "Ricardo Gomes",
+        "jogos": "200",
+        "gols": "40",
+        "assistencias": "10"
+    },
+    {
+        "liga": "conference",
+        "imagem": "images/europaLeague/Larsson.png",
+        "nome": "Pellegrino",
+        "jogos": "200",
+        "gols": "40",
+        "assistencias": "10"
+    },
+    {
+        "liga": "conference",
+        "imagem": "images/europaLeague/Larsson.png",
+        "nome": "Rrahmani",
+        "jogos": "200",
+        "gols": "40",
+        "assistencias": "10"
+    },
+    {
+        "liga": "conference",
+        "imagem": "images/europaLeague/Larsson.png",
+        "nome": "Pululu",
+        "jogos": "200",
+        "gols": "40",
+        "assistencias": "10"
+    }
+]
