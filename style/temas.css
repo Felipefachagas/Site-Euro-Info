@@ -286,6 +286,7 @@ body.tema-conference {
     transform 0.5s ease;
 }
 
+
 /* PARTE DO HOVER */
 .card-jogador:hover .imagem-jogador {
   transform: scale(1.15);
@@ -325,6 +326,10 @@ body.tema-conference {
   opacity: 1;
 }
 
+
+
+
+
 /*PARTE DOS BOTOES DA NOTICIA E JOGADORES*/
 .verMais,
 .voltar {
@@ -348,4 +353,80 @@ body.tema-conference {
   transform: scale(1.2);
   border: 1px solid rgb(32, 32, 32);
   color: white;
+}
+
+
+/* ESTILIZANDO A TABELA*/
+.tabela-wrapper {
+  overflow-x: auto;
+  margin-top: 20px;
+}
+
+.tabela-titulo {
+  color: white;
+  margin-bottom: 15px;
+  text-transform: uppercase;
+}
+
+.tabela-classificacao {
+  width: 100%;
+  text-align: left;
+  border-collapse: collapse;
+  min-width: 500px;
+}
+
+.tabela-classificacao th,
+.tabela-classificacao td {
+  padding: 12px;
+}
+
+.tabela-cabecalho {
+  border-bottom: 2px solid rgba(255, 255, 255, 0.2);
+}
+
+.tabela-linha {
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  transition: background 0.3s;
+}
+
+.tabela-linha:hover {
+  background: rgba(255, 255, 255, 0.1);
+}
+
+.col-rank {
+  font-weight: bold;
+  color: var(--cor-destaque);
+}
+
+.col-clube {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-weight: bold;
+}
+
+.logo-clube {
+  width: 25px;
+  height: 25px;
+}
+
+.col-pts {
+  font-weight: bold;
+  font-size: 1.1rem;
+}
+
+.btn-tabela-completa {
+  width: 100%;
+  margin-top: 20px;
+  text-align: center;
+}
+
+.texto-carregando {
+  text-align: center;
+  color: white;
+}
+
+.texto-erro {
+  text-align: center;
+  color: #ff4c4c;
 }

@@ -1,3 +1,6 @@
+// Arquivo para receber os dados da API
+
+// informações da api sports
 const API_KEY = "c58083e21061647c34c7b22032f8900e";
 const BASE_URL = "https://v3.football.api-sports.io";
 
@@ -21,3 +24,5 @@ async function buscarTabelaNaAPI(idLiga, temporada) {
     console.error("Erro na conexão com a API:", erro);
   }
 }
+
+// busca jogos 

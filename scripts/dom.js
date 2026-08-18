@@ -1,5 +1,5 @@
 // pegando os dados do html
-const botoesNav = document.querySelectorAll(".nav-btn"); // Botões da NavBar
+const botoesNav = document.querySelectorAll("nav .nav-btn"); // Botões da NavBar
 const app = document.querySelector("#container");
 const body = document.body;
 const destaque = document.querySelector("#destaque"); // As seções, importante pegar a "caixa" para inserir os dados via DOM
@@ -85,49 +85,51 @@ botoesNav.forEach((botao) => {
   });
 });
 
+
+
+
 // Parte da API
 
 let tabelaCompletaAtual = []; // Guarda a tabela completa na memória
 
 // Função que cria o HTML da tabela
-// Função que cria o HTML da tabela
 function renderizarTabela(times, mostrarBotaoVerMais = true) {
-  // 1. Cria as linhas para cada time
+  // cria as linhas para cada time 
   const htmlLinhas = times
     .map(
       (time) => `
-    <tr style="border-bottom: 1px solid rgba(255,255,255,0.1); transition: background 0.3s;" onmouseover="this.style.background='rgba(255,255,255,0.1)'" onmouseout="this.style.background='transparent'">
-      <td style="padding: 12px; font-weight: bold; color: var(--cor-destaque);">${time.rank}</td>
-      <td style="padding: 12px; display: flex; align-items: center; gap: 10px; font-weight: bold;">
-        <img src="${time.team.logo}" style="width: 25px; height: 25px;">
+    <tr class="tabela-linha">
+      <td class="col-rank">${time.rank}</td>
+      <td class="col-clube">
+        <img src="${time.team.logo}" class="logo-clube" alt="Logo do ${time.team.name}">
         ${time.team.name}
       </td>
-      <td style="padding: 12px; font-weight: bold; font-size: 1.1rem;">${time.points}</td>
-      <td style="padding: 12px;">${time.all.played}</td>
-      <td style="padding: 12px;">${time.all.win}</td>
-      <td style="padding: 12px;">${time.all.draw}</td>
-      <td style="padding: 12px;">${time.all.lose}</td>
-      <td style="padding: 12px;">${time.goalsDiff}</td>
+      <td class="col-pts">${time.points}</td>
+      <td>${time.all.played}</td>
+      <td>${time.all.win}</td>
+      <td>${time.all.draw}</td>
+      <td>${time.all.lose}</td>
+      <td>${time.goalsDiff}</td>
     </tr>
   `,
     )
     .join("");
 
-  // 2. Monta o card principal com o cabeçalho
+  //  monta a tabela
   let htmlFinal = `
-    <div class="card-glass" style="overflow-x: auto; margin-top: 20px;">
-      <h2 style="color: white; margin-bottom: 15px; text-transform: uppercase;">Classificação do Grupo</h2>
-      <table style="width: 100%; text-align: left; border-collapse: collapse; min-width: 500px;">
+    <div class="card-glass tabela-wrapper">
+      <h2 class="tabela-titulo">Classificação</h2>
+      <table class="tabela-classificacao">
         <thead>
-          <tr style="border-bottom: 2px solid rgba(255,255,255,0.2);">
-            <th style="padding: 12px;">#</th>
-            <th style="padding: 12px;">Clube</th>
-            <th style="padding: 12px;">Pts</th>
-            <th style="padding: 12px;">J</th>
-            <th style="padding: 12px;">V</th>
-            <th style="padding: 12px;">E</th>
-            <th style="padding: 12px;">D</th>
-            <th style="padding: 12px;">SG</th>
+          <tr class="tabela-cabecalho">
+            <th>#</th>
+            <th>Clube</th>
+            <th>Pts</th>
+            <th>J</th>
+            <th>V</th>
+            <th>E</th>
+            <th>D</th>
+            <th>SG</th>
           </tr>
         </thead>
         <tbody>
@@ -136,10 +138,10 @@ function renderizarTabela(times, mostrarBotaoVerMais = true) {
       </table>
   `;
 
-  // 3. Adiciona o botão de Ver Mais APENAS se for a tabela resumida
+  // adiciona o botão de Ver Mais se for no Visão Geral
   if (mostrarBotaoVerMais) {
     htmlFinal += `
-      <button id="btn-ver-mais-tabela" class="botao-acao" style="width: 100%; margin-top: 20px; text-align: center;">
+      <button id="btn-ver-mais-tabela" class="botao-acao btn-tabela-completa">
         Ver Tabela Completa
       </button>
     `;
@@ -147,15 +149,14 @@ function renderizarTabela(times, mostrarBotaoVerMais = true) {
 
   htmlFinal += `</div>`;
 
-  // 4. Joga tudo na tela
+  // atualiza a tela
   destaque.innerHTML = htmlFinal;
 
-  // 5. Ativa o botão de "Ver Mais"
+  // ativa o ver mais
   if (mostrarBotaoVerMais) {
     document
       .querySelector("#btn-ver-mais-tabela")
       .addEventListener("click", () => {
-        // A MUDANÇA FOI AQUI: Acionamos a função passando "false" para carregar 40 times!
         iniciarSecaoTabela(false);
       });
   }
@@ -163,23 +164,21 @@ function renderizarTabela(times, mostrarBotaoVerMais = true) {
 
 // Ativando a API quando clica em "Tabela"
 async function iniciarSecaoTabela(ehResumida = true) {
-  destaque.innerHTML =
-    "<h2 style='text-align:center;'>Carregando dados ao vivo da UEFA... ⏳</h2>";
+
+  destaque.innerHTML = "<h2 class='texto-carregando'>Carregando dados ao vivo da UEFA... ⏳</h2>";
 
   const idsLigas = { champions: 2, europa: 3, conference: 848 };
-  const idDaLigaParaAPI = idsLigas[ligaAtual];
+  const idDaLigaParaAPI = idsLigas[ligaAtual];  // pegando os valores necessarios
   const temporada = 2024;
 
-  // Define se vai cortar em 4 (Visão Geral) ou buscar 40 (Tabela Completa)
-  const limiteDeTimes = ehResumida ? 4 : 40;
+  const limiteDeTimes = ehResumida ? 8 : 40;
 
-  const dados = await obterTabelaTratada(
+  const dados = await obterTabelaTratada(  // pegando os dados da api
     idDaLigaParaAPI,
     temporada,
     limiteDeTimes,
   );
 
-  // Extrai a lista de times de forma segura, independente da versão do seu dados.js
   let tabelaParaMostrar = [];
   if (Array.isArray(dados)) {
     tabelaParaMostrar = dados;
@@ -187,16 +186,15 @@ async function iniciarSecaoTabela(ehResumida = true) {
     tabelaParaMostrar = ehResumida ? dados.limitada : dados.completa;
   }
 
-  // Trava de segurança final
+  // Trava de segurança final usando a classe de erro
   if (!tabelaParaMostrar || tabelaParaMostrar.length === 0) {
-    destaque.innerHTML =
-      "<h2 style='text-align:center; color: red;'>Erro ao buscar tabela!</h2>";
+    destaque.innerHTML = "<h2 class='texto-erro'>Erro ao buscar tabela!</h2>";
     return;
   }
 
-  // Desenha na tela!
-  renderizarTabela(tabelaParaMostrar, ehResumida);
+  renderizarTabela(tabelaParaMostrar, ehResumida);  // chamando a funcao de mostrar na tela
 }
+
 
 // Inserindo as noticias
 let indiceAtual = 0;

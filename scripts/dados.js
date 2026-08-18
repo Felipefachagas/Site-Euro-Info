@@ -1,23 +1,18 @@
-// ==========================================
-// ARQUIVO: dados.js (Com memória anti-bug)
-// ==========================================
+// arquivo para o tratamento de dados vindos da API
 
 const memoriaDasTabelas = {};
 
-async function obterTabelaTratada(idLiga, temporada, limite = 4) {
+async function obterTabelaTratada(idLiga, temporada, limite = 8) {
   const chaveMemoria = `${idLiga}-${temporada}`;
   let dadosBrutos;
 
-  // 1. Antes de ir na internet, olha se já tem na memória!
+  // verificando se os dados ja estao na memoria para poupar usos de api
   if (memoriaDasTabelas[chaveMemoria]) {
-    console.log("⚡ Pegando da memória! Zero requisições gastas.");
     dadosBrutos = memoriaDasTabelas[chaveMemoria];
   } else {
-    // 2. Se não tem, vai na internet buscar
-    console.log("🌐 Buscando na API oficial...");
+    // se não tem, vai buscar na API
     dadosBrutos = await buscarTabelaNaAPI(idLiga, temporada);
-
-    // 3. Salva na memória para não precisar buscar de novo se você voltar na aba
+    // salva na memória para não precisar buscar de novo se você voltar na aba
     if (
       dadosBrutos &&
       dadosBrutos.response &&
@@ -27,7 +22,7 @@ async function obterTabelaTratada(idLiga, temporada, limite = 4) {
     }
   }
 
-  // Trava de segurança caso venha quebrado
+  // Trava de segurança caso venha errado
   if (
     !dadosBrutos ||
     !dadosBrutos.response ||
@@ -39,8 +34,8 @@ async function obterTabelaTratada(idLiga, temporada, limite = 4) {
   // Pega a tabela principal
   const tabelaCompleta = dadosBrutos.response[0].league.standings[0];
 
-  // Corta a tabela de acordo com o limite que a aba pediu (4 ou 40)
-  const tabelaFinal = tabelaCompleta.slice(0, limite);
+  // Corta a tabela de acordo com o limite
+  const tabelaFinal = tabelaCompleta.slice(0, limite); 
 
   return tabelaFinal;
 }
