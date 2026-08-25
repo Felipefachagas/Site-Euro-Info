@@ -13,7 +13,6 @@ const secaoBase = document.querySelector("#secao-base");
 const botaoVerMais2 = document.querySelector("#ver-mais2"); // Para os melhores jogadores
 const botaoVoltar2 = document.querySelector("#voltar2");
 
-let ligaAtual = "";
 
 // Carregando a tela completa
 function carregarTela(tela) {
@@ -38,7 +37,7 @@ function carregarTela(tela) {
     navSecundaria.style.display = "flex";
 
     ligaAtual = tela;
-    iniciarSecaoTabela(true);
+    iniciarVisaoGeral();
 
     if (tela === "champions") {
       body.classList.add("tema-champions");
@@ -65,12 +64,14 @@ botoesNavSecundaria.forEach((botao) => {
     const abaClicada = event.currentTarget.dataset.tela;
 
     if (abaClicada === "tabela") {
-      console.log("ENTROU AQUI")
       // Clicou na aba Tabela? Chama a função passando FALSE (não é resumida)
       iniciarSecaoTabela(false);
-    } else if (abaClicada === "visaoGeral") {
+    } else if (abaClicada == "jogos") {
+
+    }
+    else if (abaClicada === "visaoGeral") {
       // Clicou na Visão Geral? Chama a função passando TRUE (é resumida)
-      iniciarSecaoTabela(true);
+      iniciarVisaoGeral();
     }
   });
 });
@@ -88,8 +89,25 @@ botoesNav.forEach((botao) => {
 
 
 
-// Parte da API
 
+async function iniciarVisaoGeral() {
+  destaque.innerHTML = `
+    <div style="display: flex; gap: 20px; flex-wrap: wrap; align-items: flex-start; width: 100%;">
+      <div id="caixa-jogos" style="width: 350px; flex-shrink: 0;"></div>
+      <div id="caixa-tabela" style="flex-grow: 1; min-width: 450px;"></div>
+      
+    </div>
+  `;
+
+  // Teremos uma promessa chamando tanto os dados dos jogos quanto os da tabela
+  await Promise.all([
+    iniciarSecaoTabela(true),
+    iniciarSecaoJogos(true)
+  ]);
+}
+
+
+// Parte da Tabela - API
 let tabelaCompletaAtual = []; // Guarda a tabela completa na memória
 
 // Função que cria o HTML da tabela
@@ -101,7 +119,7 @@ function renderizarTabela(times, mostrarBotaoVerMais = true) {
     <tr class="tabela-linha">
       <td class="col-rank">${time.rank}</td>
       <td class="col-clube">
-        <img src="${time.team.logo}" class="logo-clube" alt="Logo do ${time.team.name}">
+        <img src="images/logos/${time.team.id}.png" class="logo-clube" alt="Logo do ${time.team.name}">
         ${time.team.name}
       </td>
       <td class="col-pts">${time.points}</td>
@@ -150,7 +168,9 @@ function renderizarTabela(times, mostrarBotaoVerMais = true) {
   htmlFinal += `</div>`;
 
   // atualiza a tela
-  destaque.innerHTML = htmlFinal;
+  const caixaAlvo = document.querySelector("#caixa-tabela") || destaque;
+  caixaAlvo.innerHTML = htmlFinal;
+
 
   // ativa o ver mais
   if (mostrarBotaoVerMais) {
@@ -165,7 +185,9 @@ function renderizarTabela(times, mostrarBotaoVerMais = true) {
 // Ativando a API quando clica em "Tabela"
 async function iniciarSecaoTabela(ehResumida = true) {
 
-  destaque.innerHTML = "<h2 class='texto-carregando'>Carregando dados ao vivo da UEFA... ⏳</h2>";
+  if (!ehResumida) {
+    destaque.innerHTML = "<h2 class='texto-carregando'>Carregando Tabela Completa</h2>";
+  }
 
   const idsLigas = { champions: 2, europa: 3, conference: 848 };
   const idDaLigaParaAPI = idsLigas[ligaAtual];  // pegando os valores necessarios
@@ -194,6 +216,87 @@ async function iniciarSecaoTabela(ehResumida = true) {
 
   renderizarTabela(tabelaParaMostrar, ehResumida);  // chamando a funcao de mostrar na tela
 }
+
+// Parte dos JOGOS
+
+// Funcao que pega os jogos da API já tratados
+async function iniciarSecaoJogos(jogoFinal = true, data) {
+  const idsLigas = { champions: 2, europa: 3, conference: 848 };
+  const idDaLigaParaAPI = idsLigas[ligaAtual];  // pegando os valores necessarios
+  const temporada = 2024;
+
+  let dados;
+  if (jogoFinal) {
+    dados = await retornaFinal(idDaLigaParaAPI, temporada) // Caso seja na visão geral, vai printar só o jogo da final
+  } else {
+    dados = await jogosPorData(idDaLigaParaAPI, temporada, data);
+  }
+
+  renderizarJogos(dados, jogoFinal);
+
+}
+
+// responsavel por colocar os jogos na tela (puramente DOM)
+function renderizarJogos(jogos, jogoFinal) {
+  const htmlDosJogos = jogos.map((jogo) => {
+    const mandante = jogo.teams.home;
+    const visitante = jogo.teams.away;
+    const golsCasa = jogo.goals.home !== null ? jogo.goals.home : "-";
+    const golsFora = jogo.goals.away !== null ? jogo.goals.away : "-";
+    // Puxando a data e o status oficial da API para a coluna da esquerda!
+    let dataFormatada = "Em breve";
+    let status = "-";
+
+    if (jogo.fixture) {
+      // Pega a data ("2024-05-31") e transforma no formato brasileiro curto ("31/05/24")
+      const dataObjeto = new Date(jogo.fixture.date);
+      dataFormatada = dataObjeto.toLocaleDateString('pt-BR', { day: '2-digit', month: '2-digit', year: '2-digit' });
+      status = jogo.fixture.status.short; // Ex: "FT", "NS", etc.
+    }
+
+    return `
+      <div class="card-glass sofa-card">
+        ${jogoFinal ? '<div class="sofa-header">Final</div>' : ''}
+        
+        <div class="sofa-body">
+          <div class="sofa-info">
+            <span class="sofa-data">${dataFormatada}</span>
+            <span class="sofa-status">${status}</span>
+          </div>
+
+          <!-- Coluna Direita: Times e Placar empilhados -->
+          <div class="sofa-times">
+            <!-- Linha do Mandante -->
+            <div class="sofa-linha">
+              <div class="sofa-time-detalhe">
+                  <img src="${mandante.logo}" alt="${mandante.name}" class="sofa-escudo">
+                  <span class="sofa-nome">${mandante.name}</span>
+              </div>
+              <span class="sofa-placar">${golsCasa}</span>
+            </div>
+
+            <!-- Linha do Visitante -->
+            <div class="sofa-linha">
+              <div class="sofa-time-detalhe">
+                  <img src="${visitante.logo}" alt="${visitante.name}" class="sofa-escudo">
+                  <span class="sofa-nome">${visitante.name}</span>
+              </div>
+              <span class="sofa-placar">${golsFora}</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    `;
+  }).join("");
+
+  // Injeta no layout dividido ou na tela inteira
+  const caixaAlvo = document.querySelector("#caixa-jogos") || destaque;
+  caixaAlvo.innerHTML = htmlDosJogos;
+}
+
+
+
+
 
 
 // Inserindo as noticias
